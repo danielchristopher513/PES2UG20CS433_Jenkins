@@ -3,7 +3,7 @@ pipeline {
        stages {
            stage( 'Build') {
           steps {
-              sh 'build PES2UG20CS433-1'
+              sh 'Build PES2UG20CS433-1'
               echo 'Build Successful '
           }
          }
