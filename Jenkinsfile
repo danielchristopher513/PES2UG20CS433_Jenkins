@@ -1,7 +1,7 @@
 pipeline {
     agent any
        stages {
-           tage( 'Build') {
+           stage( 'Build') {
           steps {
               sh 'build PES2UG20CS433-1'
               echo 'Build Successful '
