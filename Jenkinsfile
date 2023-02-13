@@ -3,7 +3,7 @@ pipeline {
        stages {
           stage('Bui1d') {
                 steps {
-                 sh 'cd main && cmake. && make'
+                 sh 'make -C main'
 '
                 echo 'Build Stage Successful '
                 }
