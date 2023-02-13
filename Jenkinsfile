@@ -1,9 +1,18 @@
 pipeline {
     agent any
        stages {
+           tage( 'Build') {
+          steps {
+              sh 'build PES2UG20CS433-1'
+              echo 'Build Successful '
+          }
+         }
+           
+           
          stage( 'Test') {
             steps {
               sh 'make -C main'
+                echo 'Test Successful '
             }
          }
          stage( 'Deploy') {
