@@ -3,7 +3,7 @@ pipeline {
        stages {
           stage('Bui1d') {
                 steps {
-                   sh 'mvn clean install'
+                   sh ' build PES2UG20CS433- 1'
                    
                 echo 'Build Stage Successful '
                 }
