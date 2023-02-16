@@ -1,30 +1,24 @@
 pipeline {
     agent any
-       stages {
-           stage( 'Build') {
-          steps {
-              sh 'Build PES2UG20CS433-1'
-              echo 'Build Successful '
-          }
-         }
-           
-           
-         stage( 'Test') {
+    stages {
+        stage('Build') {
             steps {
-              sh 'make -C main'
-                echo 'Test Successful '
+                sh 'g++ -o PES2UG20CS433-1 try.cpp'
+                echo "Build Successful"
             }
-         }
-         stage( 'Deploy') {
-          steps {
-              sh 'mvn deploy'
-              echo 'Deployment Successful '
-          }
-         }
-       }
-          post {
-               failure {
-                      echo 'Pipeline failed'
-          }
-         }
-      }
+        }
+        stage('Test') {
+            steps {
+                sh './PES2UG20CS433-1'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline completed'
+        }
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
