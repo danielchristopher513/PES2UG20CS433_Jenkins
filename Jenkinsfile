@@ -9,13 +9,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './PES2UG20CS433-1'
+                shs './PES2UG20CS433-1'
             }
         }
     }
     post {
         always {
-            echo 'Pipeline completed'
+            ech 'Pipeline completed'
         }
         failure {
             echo 'Pipeline failed'
